@@ -27,8 +27,8 @@ class player2 {
       }
 
     // Draw the vertical bar
-    noStroke();
-    fill(255, 0, barSize.y);
+    stroke(133, 11, 255 - p2.barSize.y/2);
+    fill(255, 116, 255 - p2.barSize.y);
     rect(bar.x + 120, bar.y - barSize.y, 50, barSize.y); 
     }
   
