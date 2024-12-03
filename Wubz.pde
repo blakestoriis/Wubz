@@ -1,6 +1,9 @@
 // Initialize images
 PImage Wubz;
 PImage start;
+PImage backdrop;
+PImage p1wins;
+PImage p2wins;
 
 // Declare classes
 player1 p1;
@@ -21,6 +24,10 @@ void setup() {
   // Setup images
   Wubz = loadImage("wubz.png");
   start = loadImage("start.png");
+  backdrop = loadImage("backdrop.png");
+  p1wins = loadImage("p1wins.png");
+  p2wins = loadImage("p2wins.png");
+
 
   // Initialize classes
   p1 = new player1();
@@ -29,7 +36,7 @@ void setup() {
 }
 
 void draw() {
-  background(200);
+  background(backdrop);
 
   startScreen(); 
   gameScreen();  
@@ -48,7 +55,7 @@ void draw() {
 // Draw start screen and handle button press
 void startScreen() {
   if (startscreen) {
-    image(Wubz, 0, 0); //title image
+    image(Wubz, 10, 40); //title image
     image(start, 0, 0); //start button
 
     // Check if the start button is clicked
@@ -82,10 +89,12 @@ void timer(){
   //if the timer runs out then the winner with the highest score wins, if both players are under 75 then both players lose
   if (timer <= 0){
     gamescreen = false;
-        if (p1.barSize.y > p2.barSize.y && p1.barSize.y > 75 && p2.barSize.y > 75) {
+        if (p1.barSize.y > p2.barSize.y) {
+            image(p1wins, 0, 0);
         player1wins = true;
-      } else if (p2.barSize.y > p1.barSize.y && p1.barSize.y > 75 && p2.barSize.y > 75) {
+      } else if (p2.barSize.y > p1.barSize.y) {
         player2wins = true;
+          image(p2wins, 0, 0);
       }
   }
 }
