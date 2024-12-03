@@ -2,13 +2,16 @@ PImage leftArrow;
 PImage rightArrow;
 PImage upArrow;
 PImage downArrow;
+PImage correct;
+PImage incorrect;
+PImage blank;
 
 //declare classes
 player1 p1;
 player2 p2;
 
 void setup() {
-  size (400,400);
+  size (500,500);
   background (255);
   noStroke();
   
@@ -19,6 +22,9 @@ void setup() {
   rightArrow = loadImage ("rightArrow.png");
   upArrow = loadImage ("upArrow.png");
   downArrow = loadImage ("downArrow.png");
+  correct = loadImage ("correct.png");
+  incorrect = loadImage ("incorrect.png");
+  blank = loadImage ("blank.png");
 
   
   //inicialize classes
@@ -57,7 +63,7 @@ void draw() {
   }
      
      randomMoves();
-  
+     p1.move();
 }
 
 //randomly generates the moves
@@ -149,20 +155,21 @@ if (start == true && fade >= 50){
     if (randomMove <=1){
       move4 = 1;
       image (leftArrow, 100, -150);
-      moveCounter = 1;
+      moveCounter = 0;
     }else if (1 < randomMove && randomMove <= 2){
       move4 = 2;
       image (rightArrow, 100, -150);
-      moveCounter = 1;
+      moveCounter = 0;
     }else if (2 < randomMove && randomMove <= 3){
       move4 = 3;
       image (upArrow, 100, -150);
-      moveCounter = 1;
+      moveCounter = 0;
     }else if (3 < randomMove && randomMove <= 4){
       move4 = 4;
       image (downArrow, 100, -150);
-      moveCounter = 1;
-    }  
+      moveCounter = 0;
+    } 
+    p1.moveTracker = 1;
   }
   }
 }
