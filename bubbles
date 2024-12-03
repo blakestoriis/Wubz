@@ -6,7 +6,7 @@ public class Bubbles{
   public float[] bubbleSize = new float[800];
   public float[] bubbleSpeed = new float[800];
   public int bubbleCount = 0;
-  public color bubbleColour = color(255, 50, p1.bar.y);
+  public color bubbleColour = color(255, 145, 255 - p1.barSize.y/1.5, 200);
   
   //creates random bubbles for player 1
   void spawnBubbles(){
@@ -40,6 +40,7 @@ public float[] bubbleY2 = new float[200];
 public float[] bubbleSize2 = new float[200];
 public float[] bubbleSpeed2 = new float[200];
 public int bubbleCount2 = 0;
+public color bubbleColour2 = color(255, 0, p2.barSize.y/1.5, 200);
 
 // Creates random bubbles for player 2
 void spawnBubbles2() {
@@ -63,7 +64,7 @@ void updateBubbles2() {
 void drawBubbles2() {
   for (int i = 0; i < bubbleCount2; i++) {
     noStroke();
-    fill(bubbleColour);  // Opaque white bubble
+    fill(bubbleColour2);  // Opaque white bubble
     ellipse(bubbleX2[i], bubbleY2[i], bubbleSize2[i], bubbleSize2[i]);  // Draw the bubble
     }
 }
