@@ -1,12 +1,12 @@
 public class Bubbles{
   
   //inicualize array variables for player 1
-  public float[] bubbleX = new float[200];
-  public float[] bubbleY = new float[200];
-  public float[] bubbleSize = new float[200];
-  public float[] bubbleSpeed = new float[200];
+  public float[] bubbleX = new float[800];
+  public float[] bubbleY = new float[800];
+  public float[] bubbleSize = new float[800];
+  public float[] bubbleSpeed = new float[800];
   public int bubbleCount = 0;
-  public color bubbleColour = color(255, 40, p1.bar.y);
+  public color bubbleColour = color(255, 50, p1.bar.y);
   
   //creates random bubbles for player 1
   void spawnBubbles(){
