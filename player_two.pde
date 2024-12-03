@@ -5,6 +5,7 @@ class player2 {
   public float decreaseRate;  
   public float increaseRate;  
   public boolean click = false; 
+  //public float score = bar.y;
 
   player2() {
     bar = new PVector(width / 2 - 10, height - 10);
