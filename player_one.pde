@@ -4,7 +4,8 @@ class player1 {
   public float maxHeight;  
   public float decreaseRate;  
   public float increaseRate;  
-  public boolean spacePressed = false; 
+  public boolean spacePressed = false;
+  //public float score = bar.y;
 
   player1() {
     bar = new PVector(width / 2 - 10, height - 10);
